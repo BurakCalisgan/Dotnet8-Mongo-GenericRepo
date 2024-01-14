@@ -1,0 +1,11 @@
+﻿services:
+  smsmanager.api:
+    image: smsmanager.api
+    build:
+      context: .
+      dockerfile: src/Services/SmsManager.Api/Dockerfile
+
+  mongo:
+    image: mongo:latest
+    ports:
+      - '27017:27017'
