@@ -11,9 +11,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{121199A6-54D1-4B4F-BC69-0E66E1BBF846}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{D3960979-0196-4C3C-AFA5-90BB651C8DA5}"
-	ProjectSection(SolutionItems) = preProject
-		HttpClients\ISmsClient.cs = HttpClients\ISmsClient.cs
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmsManager.Api", "src\Services\SmsManager.Api\SmsManager.Api.csproj", "{0E63B22C-15AE-4E76-9822-C9E518BBBA1A}"
 EndProject
