@@ -1,4 +1,4 @@
-## Dotnet Core 8 - Generic Mongo - Onion Arc.
+## Dotnet Core 8 - Generic Mongo - Onion Arc. - Rabbitmq
 
  * Documentations
 

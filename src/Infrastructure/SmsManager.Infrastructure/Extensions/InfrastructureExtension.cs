@@ -8,7 +8,8 @@ public static class InfrastructureExtension
 {
     public static IServiceCollection AddInfrastructure(this IServiceCollection services)
     {
-        return services
-            .AddSingleton<ISmsRepository, SmsRepository>();
+        services.AddSingleton<ISmsRepository, SmsRepository>();
+        services.AddSingleton<IAuthRepository, AuthRepository>();
+        return services;
     }
 }

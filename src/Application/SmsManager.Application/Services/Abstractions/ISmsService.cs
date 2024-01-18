@@ -1,10 +1,10 @@
-using SmsManager.Application.Request;
-using SmsManager.Application.Response;
+using SmsManager.Application.Request.Sms;
+using SmsManager.Application.Response.Sms;
 
 namespace SmsManager.Application.Services.Abstractions;
 
 public interface ISmsService
 {
-    Task<SmsResponse> AddAsync(CreateRequest request);
-    Task<SmsResponse> GetByIdAsync(string id);
+    Task<CreateSmsResponse> AddAsync(CreateSmsRequest smsRequest);
+    Task<CreateSmsResponse> GetByIdAsync(string id);
 }

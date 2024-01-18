@@ -7,19 +7,19 @@ EXPOSE 8081
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["src/Services/SmsManager.Api/SmsManager.Api.csproj", "src/Services/SmsManager.Api/"]
+COPY ["src/Services/SmsManager.Consumer/SmsManager.Consumer.csproj", "src/Services/SmsManager.Consumer/"]
 COPY ["src/Application/SmsManager.Application/SmsManager.Application.csproj", "src/Application/SmsManager.Application/"]
 COPY ["src/Domain/SmsManager.Domain/SmsManager.Domain.csproj", "src/Domain/SmsManager.Domain/"]
 COPY ["src/Application/SmsManager.EventContract/SmsManager.EventContract.csproj", "src/Application/SmsManager.EventContract/"]
 COPY ["src/Infrastructure/SmsManager.Infrastructure/SmsManager.Infrastructure.csproj", "src/Infrastructure/SmsManager.Infrastructure/"]
-RUN dotnet restore "src/Services/SmsManager.Api/SmsManager.Api.csproj"
+RUN dotnet restore "src/Services/SmsManager.Consumer/SmsManager.Consumer.csproj"
 COPY . .
-WORKDIR "/src/src/Services/SmsManager.Api"
-RUN dotnet build "SmsManager.Api.csproj" -c $BUILD_CONFIGURATION -o /app/build
+WORKDIR "/src/src/Services/SmsManager.Consumer"
+RUN dotnet build "SmsManager.Consumer.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 FROM build AS publish
 ARG BUILD_CONFIGURATION=Release
-RUN dotnet publish "SmsManager.Api.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "SmsManager.Consumer.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
 
 FROM base AS final
 WORKDIR /app
@@ -45,4 +45,4 @@ RUN apt update && apt install -y newrelic-dotnet-agent
 RUN apt clean && apt autoremove -y && rm -rf /var/lib/apt/lists/*  /var/cache/*
 # NewRelic end
 
-ENTRYPOINT ["dotnet", "SmsManager.Api.dll"]
+ENTRYPOINT ["dotnet", "SmsManager.Consumer.dll"]

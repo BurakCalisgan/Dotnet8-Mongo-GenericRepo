@@ -1,23 +1,30 @@
-using SmsManager.Application.Request;
-using SmsManager.Application.Response;
+using MassTransit;
+using SmsManager.Application.Request.Sms;
+using SmsManager.Application.Response.Sms;
 using SmsManager.Application.Services.Abstractions;
 using SmsManager.Domain.Documents;
 using SmsManager.Domain.Repository;
+using SmsManager.EventContract.Events;
 
 namespace SmsManager.Application.Services.Implementations;
 
-public class SmsService(ISmsRepository smsRepository) : ISmsService
+public class SmsService(ISmsRepository smsRepository, IPublishEndpoint publishEndpoint) : ISmsService
 {
-    public async Task<SmsResponse> AddAsync(CreateRequest request)
+    public async Task<CreateSmsResponse> AddAsync(CreateSmsRequest smsRequest)
     {
         var result = await smsRepository.AddAsync(new Sms()
         {
-            PhoneNumber = request.PhoneNumber,
-            SmsContent = request.SmsContent,
+            PhoneNumber = smsRequest.PhoneNumber,
+            SmsContent = smsRequest.SmsContent,
             UpdatedAt = DateTime.UtcNow
         });
+        await publishEndpoint.Publish(new SendSmsEvent
+        {
+            PhoneNumber = smsRequest.PhoneNumber,
+            SmsContent = smsRequest.SmsContent,
+        });
 
-        return new SmsResponse
+        return new CreateSmsResponse
         {
             PhoneNumber = result.PhoneNumber,
             SmsContent = result.SmsContent,
@@ -26,11 +33,11 @@ public class SmsService(ISmsRepository smsRepository) : ISmsService
         };
     }
 
-    public async Task<SmsResponse> GetByIdAsync(string id)
+    public async Task<CreateSmsResponse> GetByIdAsync(string id)
     {
         var result = await smsRepository.GetByIdAsync(id);
 
-        return new SmsResponse
+        return new CreateSmsResponse
         {
             PhoneNumber = result.PhoneNumber,
             SmsContent = result.SmsContent,

@@ -27,6 +27,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		docker-compose.yml = docker-compose.yml
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmsManager.Consumer", "src\Services\SmsManager.Consumer\SmsManager.Consumer.csproj", "{FE514582-7A01-4F81-B1A1-2E1782989E35}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmsManager.EventContract", "src\Application\SmsManager.EventContract\SmsManager.EventContract.csproj", "{627F2777-CCFF-49D1-AC4E-B54855D84929}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,6 +46,8 @@ Global
 		{5B48BE51-5D9C-40D5-AF12-C031FFDFA615} = {D3960979-0196-4C3C-AFA5-90BB651C8DA5}
 		{E1D30133-8ED6-4CB3-9C0C-81CE548C3886} = {70AE4525-C88A-49F5-B457-75BAF45950E9}
 		{616CEC21-2E03-4179-B374-5DD521B4F27E} = {496AFE7F-23BC-4B8A-BB8C-0527C442EC45}
+		{FE514582-7A01-4F81-B1A1-2E1782989E35} = {0287B4D8-9431-40A3-9412-F75DE564601C}
+		{627F2777-CCFF-49D1-AC4E-B54855D84929} = {70AE4525-C88A-49F5-B457-75BAF45950E9}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{0E63B22C-15AE-4E76-9822-C9E518BBBA1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -64,5 +70,13 @@ Global
 		{616CEC21-2E03-4179-B374-5DD521B4F27E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{616CEC21-2E03-4179-B374-5DD521B4F27E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{616CEC21-2E03-4179-B374-5DD521B4F27E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE514582-7A01-4F81-B1A1-2E1782989E35}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE514582-7A01-4F81-B1A1-2E1782989E35}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE514582-7A01-4F81-B1A1-2E1782989E35}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE514582-7A01-4F81-B1A1-2E1782989E35}.Release|Any CPU.Build.0 = Release|Any CPU
+		{627F2777-CCFF-49D1-AC4E-B54855D84929}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{627F2777-CCFF-49D1-AC4E-B54855D84929}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{627F2777-CCFF-49D1-AC4E-B54855D84929}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{627F2777-CCFF-49D1-AC4E-B54855D84929}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

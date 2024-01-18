@@ -1,6 +1,6 @@
-namespace SmsManager.Application.Response;
+namespace SmsManager.Application.Response.Sms;
 
-public class SmsResponse
+public class CreateSmsResponse
 {
     public string PhoneNumber { get; set; } = null!;
     public string SmsContent { get; set; } = null!;
