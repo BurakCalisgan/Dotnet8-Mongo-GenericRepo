@@ -4,6 +4,12 @@
     build:
       context: .
       dockerfile: src/Services/SmsManager.Api/Dockerfile
+      
+  smsmanager.consumer:
+    image: smsmanager.consumer
+    build:
+      context: .
+      dockerfile: src/Services/SmsManager.Consumer/Dockerfile
 
   mongo:
     image: mongo:latest
@@ -18,3 +24,5 @@
     ports:
       - "5672:5672"
       - "15672:15672"
+
+

@@ -1,6 +1,6 @@
 using System.Text.Json;
 using MassTransit;
-using SmsManager.EventContract.Events;
+using SmsManager.Application.EventContract.Events;
 
 namespace SmsManager.Consumer.Consumers;
 

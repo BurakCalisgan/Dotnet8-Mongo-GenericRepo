@@ -29,7 +29,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmsManager.Consumer", "src\Services\SmsManager.Consumer\SmsManager.Consumer.csproj", "{FE514582-7A01-4F81-B1A1-2E1782989E35}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmsManager.EventContract", "src\Application\SmsManager.EventContract\SmsManager.EventContract.csproj", "{627F2777-CCFF-49D1-AC4E-B54855D84929}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmsManager.Application.EventContract", "src\Application\SmsManager.Application.EventContract\SmsManager.Application.EventContract.csproj", "{627F2777-CCFF-49D1-AC4E-B54855D84929}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

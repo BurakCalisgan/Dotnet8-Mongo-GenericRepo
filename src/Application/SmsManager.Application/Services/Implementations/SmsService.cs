@@ -4,7 +4,7 @@ using SmsManager.Application.Response.Sms;
 using SmsManager.Application.Services.Abstractions;
 using SmsManager.Domain.Documents;
 using SmsManager.Domain.Repository;
-using SmsManager.EventContract.Events;
+using SmsManager.Application.EventContract.Events;
 
 namespace SmsManager.Application.Services.Implementations;
 

@@ -10,7 +10,7 @@ WORKDIR /src
 COPY ["src/Services/SmsManager.Consumer/SmsManager.Consumer.csproj", "src/Services/SmsManager.Consumer/"]
 COPY ["src/Application/SmsManager.Application/SmsManager.Application.csproj", "src/Application/SmsManager.Application/"]
 COPY ["src/Domain/SmsManager.Domain/SmsManager.Domain.csproj", "src/Domain/SmsManager.Domain/"]
-COPY ["src/Application/SmsManager.EventContract/SmsManager.EventContract.csproj", "src/Application/SmsManager.EventContract/"]
+COPY ["src/Application/SmsManager.Application.EventContract/SmsManager.Application.EventContract.csproj", "src/Application/SmsManager.Application.EventContract/"]
 COPY ["src/Infrastructure/SmsManager.Infrastructure/SmsManager.Infrastructure.csproj", "src/Infrastructure/SmsManager.Infrastructure/"]
 RUN dotnet restore "src/Services/SmsManager.Consumer/SmsManager.Consumer.csproj"
 COPY . .

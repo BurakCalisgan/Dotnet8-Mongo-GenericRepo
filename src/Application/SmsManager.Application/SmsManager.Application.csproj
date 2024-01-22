@@ -9,7 +9,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\..\Domain\SmsManager.Domain\SmsManager.Domain.csproj" />
-      <ProjectReference Include="..\SmsManager.EventContract\SmsManager.EventContract.csproj" />
+      <ProjectReference Include="..\SmsManager.Application.EventContract\SmsManager.Application.EventContract.csproj" />
     </ItemGroup>
 
     <ItemGroup>

@@ -8,9 +8,9 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
 COPY ["src/Services/SmsManager.Api/SmsManager.Api.csproj", "src/Services/SmsManager.Api/"]
+COPY ["src/Application/SmsManager.Application.EventContract/SmsManager.Application.EventContract.csproj", "src/Application/SmsManager.Application.EventContract/"]
 COPY ["src/Application/SmsManager.Application/SmsManager.Application.csproj", "src/Application/SmsManager.Application/"]
 COPY ["src/Domain/SmsManager.Domain/SmsManager.Domain.csproj", "src/Domain/SmsManager.Domain/"]
-COPY ["src/Application/SmsManager.EventContract/SmsManager.EventContract.csproj", "src/Application/SmsManager.EventContract/"]
 COPY ["src/Infrastructure/SmsManager.Infrastructure/SmsManager.Infrastructure.csproj", "src/Infrastructure/SmsManager.Infrastructure/"]
 RUN dotnet restore "src/Services/SmsManager.Api/SmsManager.Api.csproj"
 COPY . .

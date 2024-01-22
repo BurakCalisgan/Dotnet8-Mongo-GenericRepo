@@ -1,4 +1,4 @@
-namespace SmsManager.EventContract.Events;
+namespace SmsManager.Application.EventContract.Events;
 
 public class SendSmsEvent
 {
